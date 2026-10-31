@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ikona środowiska Luna — pastelowy półksiężyc bez tła (przezroczysty PNG/SVG). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="12 12 104 104">
+  <defs>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D8CCF0"/>
+      <stop offset="1" stop-color="#B5D5F1"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M 96.11 81.83 A 38 38 0 1 1 55.57 32.27 A 33 33 0 0 0 96.11 81.83 Z"
+        fill="url(#moon)" stroke="#7B67AB" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M99 25 l3.2 7.8 7.8 3.2 -7.8 3.2 -3.2 7.8 -3.2 -7.8 -7.8 -3.2 7.8 -3.2 z"
+        fill="#F3D27C" stroke="#D8B25B" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>
