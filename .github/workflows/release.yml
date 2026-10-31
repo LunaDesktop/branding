@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pakiet
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tar -czf "luna-branding-${GITHUB_REF_NAME}.tar.gz" icons branding wallpapers
+          sha256sum luna-branding-*.tar.gz > SHA256SUMS
+
+      - name: Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            luna-branding-*.tar.gz
+            SHA256SUMS
+          generate_release_notes: true
